@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white-1100: #FDFDFD;
+  --color-orange-1100: #EF8F19;
+  --color-black-1100: #060606;
+  --color-black-1200: #202020;
+  --color-yellow-1200: #89520E;
+  --color-grey-1100: #DCDCDC;
+  --color-yellow13: #FFD8A7;
+  --color-yellow14: #FFAE4B;
+  --color-blue12: #4285F4;
+  --text-shadow-xl: 8px 8px 12px rgba(0, 0, 0, 0.25);
+  --shadow-3xl: 8px 8px 12px 0 rgba(0, 0, 0, 0.25);
+  --shadow-4xl: 4px 16px 24px 0 rgba(255, 255, 255, 0.09), 0 0 8px 0 rgba(255, 255, 255, 0.32);
+  --font-sora: "Sora", sans-serif;
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 20s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-33.333%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
