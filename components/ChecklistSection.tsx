@@ -24,13 +24,13 @@ function StarIcon({ className = "w-6 h-6 shrink-0" }: StarIconProps) {
 
 export default function ChecklistSection() {
   return (
-    <section className="flex gap-16 w-full">
+    <section className="flex gap-16 w-full xl:justify-start justify-center">
       <div className="relative flex items-center justify-center w-120.25 rounded-2xl overflow-hidden">
         <div className="rounded-2xl pt-px px-0.5 pb-0.5 bg-linear-to-r from-yellow-1200 from-0% via-orange-1100 via-54% to-yellow-1200 to-100%">
-          <div className="bg-[url(/images/galaxy-img.png)] bg-no-repeat bg-cover rounded-2xl px-8 pt-7.5 pb-16.75">
+          <div className="bg-[url(/images/galaxy-img.png)] bg-no-repeat bg-cover rounded-2xl xl:px-8 p-8 xl:pt-7.5 pb-8 md:pb-16.75">
             <div className="flex flex-col items-start relative z-50">
               <div className="flex flex-col gap-6 items-start w-100.75 relative z-50">
-                <h2 className="text-white-1100 text-[32px] font-bold leading-[140%]">
+                <h2 className="text-white-1100 md:text-[32px] font-bold text-lg leading-5.5 md:leading-[140%]">
                   Ist dein Online Marketing auf dem Erfolgskurs?
                 </h2>
                 <button className="bg-orange-1100 hover:bg-yellow14 text-white text-sm leading-6 font-normal rounded px-4 h-10.25 cursor-pointer inline-flex items-center justify-center transition-all">
@@ -56,7 +56,7 @@ export default function ChecklistSection() {
         </div>
       </div>
 
-      <div className="flex-1 w-full">
+      <div className="flex-1 w-full xl:block hidden">
         <div className="relative mb-8">
           <img alt="quote" src={imgQuote} />
         </div>

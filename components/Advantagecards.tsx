@@ -49,18 +49,20 @@ export default function AdvantageCards({
   const [active, setActive] = useState(0);
 
   return (
-    <div className={`flex items-stretch justify-between gap-8 ${className}`}>
-      <div className="flex flex-col w-1/2">
+    <div
+      className={`md:flex items-stretch block justify-between md:flex-row flex-col gap-8 ${className}`}
+    >
+      <div className="flex flex-col md:w-1/2 w-full">
         {BENEFITS.map((benefit, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`text-left w-full p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
+            className={`text-left w-full md:p-6 p-4 rounded-2xl transition-all duration-300 cursor-pointer ${
               active === i ? "bg-white/10" : "bg-transparent hover:bg-white/5"
             }`}
           >
             <p
-              className={`text-2xl font-semibold leading-8.25 transition-colors duration-300 ${
+              className={`xl:text-2xl text-sm font-semibold leading-4.75 xl:leading-8.25 transition-colors duration-300 ${
                 active === i ? "text-orange-1100" : "text-white/50"
               }`}
             >
@@ -73,7 +75,7 @@ export default function AdvantageCards({
             >
               <div className="overflow-hidden">
                 <p
-                  className={`text-base font-normal leading-5.5 text-grey-1100 mt-4 transition-opacity duration-500 ${
+                  className={`xl:text-base font-normal text-xs leading-4 xl:leading-5.5 text-grey-1100 mt-4 transition-opacity duration-500 ${
                     active === i ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -85,7 +87,7 @@ export default function AdvantageCards({
         ))}
       </div>
 
-      <div className="w-1/2 relative rounded-2xl overflow-hidden shadow-4xl">
+      <div className="md:w-1/2 w-full relative rounded-2xl overflow-hidden shadow-4xl">
         {BENEFITS.map((benefit, i) => (
           <img
             key={i}

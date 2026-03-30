@@ -16,8 +16,8 @@ const ROW_TWO = [
 
 function LogoTile({ src }: { src: string }) {
   return (
-    <div className="rounded-xl w-35 h-25 flex items-center justify-center bg-black-1200 shrink-0">
-      <img src={src} alt="" />
+    <div className="md:rounded-xl rounded-md md:w-35 w-18.5 h-13.25 md:h-25 flex items-center justify-center bg-black-1200 shrink-0">
+      <img src={src} alt="" className="md:h-auto h-6.25" />
     </div>
   );
 }
@@ -35,7 +35,7 @@ function MarqueeRow({
   return (
     <div className="overflow-hidden w-full">
       <div
-        className={`flex gap-6 w-max ${
+        className={`flex gap-3 md:gap-6 w-max ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
         }`}
       >
@@ -53,7 +53,7 @@ export default function PartnerLogosMarquee({
   className?: string;
 }) {
   return (
-    <div className={`flex flex-col gap-6 ${className}`}>
+    <div className={`flex flex-col gap-3 md:gap-6 ${className}`}>
       <MarqueeRow icons={ROW_ONE} />
       <MarqueeRow icons={ROW_TWO} reverse />
     </div>

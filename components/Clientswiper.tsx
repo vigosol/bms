@@ -20,7 +20,6 @@ const Clientswiper = () => {
       direction: "vertical",
       autoHeight: true,
       slidesPerView: "auto",
-      loop: true,
       allowTouchMove: false,
       autoplay: {
         delay: 2500,
@@ -43,7 +42,7 @@ const Clientswiper = () => {
         {SLIDES.map((text, i) => (
           <div key={i} className="swiper-slide">
             <div className="text-center">
-              <h2 className="text-[80px] font-extrabold leading-20.75 uppercase text-white-1100 text-shadow-xl">
+              <h2 className="xl:text-[80px] font-extrabold md:text-[72px] text-[32px] md:leading-18.5 xl:leading-20.75 uppercase text-white-1100 text-shadow-xl">
                 {text}
               </h2>
             </div>

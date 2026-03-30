@@ -85,16 +85,16 @@ const CASE_STUDIES: CaseStudy[] = [
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
-    <div className="flex gap-5 items-end h-full">
-      <div className="relative rounded-xl overflow-hidden shadow-4xl px-5 py-7 bg-[url(/images/case-studybg.png)] bg-no-repeat bg-cover">
+    <div className="flex gap-5 xl:items-end items-start h-full pr-4 md:flex-row flex-col">
+      <div className="relative rounded-xl overflow-hidden md:w-auto w-full  shadow-4xl px-5 py-10 xl:py-7 bg-[url(/images/case-studybg.png)] bg-no-repeat bg-cover">
         <img
           src={study.image}
           alt={study.title}
-          className="w-full h-full object-cover"
+          className="w-full xl:h-full object-cover h-60.25 "
         />
       </div>
 
-      <div className="flex flex-col flex-1 gap-4 text-white-1100">
+      <div className="flex flex-col flex-1 gap-4 text-white-1100 lg:max-w-full max-w-full md:max-w-75.75">
         <p className="text-base font-bold leading-5.5">{study.title}</p>
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-0.5">
@@ -148,15 +148,14 @@ export default function CaseStudiesSlider({
       direction: "horizontal",
       slidesPerView: 1.5,
       spaceBetween: 88,
-      loop: true,
       on: {
         slideChange(s) {
           setActiveIndex(s.realIndex);
         },
       },
       breakpoints: {
-        320: { slidesPerView: 1.5, spaceBetween: 20 },
-        1440: { slidesPerView: 1.6, spaceBetween: 60 },
+        320: { slidesPerView: 1, spaceBetween: 20 },
+        1200: { slidesPerView: 1.6, spaceBetween: 60 },
         1600: { slidesPerView: 1.6 },
       },
     });
@@ -177,8 +176,8 @@ export default function CaseStudiesSlider({
         </div>
       </div>
 
-      <div className="flex items-center justify-between mt-8">
-        <div className="flex items-center gap-3 lg:hidden">
+      <div className="flex items-center justify-center mt-8 xl:hidden">
+        <div className="flex items-center gap-7.5 ">
           {CASE_STUDIES.map((_, i) => (
             <button
               key={i}
