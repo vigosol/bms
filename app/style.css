@@ -3,6 +3,7 @@
 @theme {
   --color-white-1100: #FDFDFD;
   --color-orange-1100: #EF8F19;
+  --color-orange-1200: #FFD096;
   --color-black-1100: #060606;
   --color-black-1200: #202020;
   --color-yellow-1200: #89520E;
@@ -13,6 +14,7 @@
   --color-brown-1100: #C5730F;
   --color-yellow-1300: #FFDEB5;
   --color-black-1300: #2a2a2a;
+  --color-red123: #EA4335;
   --text-shadow-xl: 8px 8px 12px rgba(0, 0, 0, 0.25);
   --shadow-3xl: 8px 8px 12px 0 rgba(0, 0, 0, 0.25);
   --shadow-4xl: 4px 16px 24px 0 rgba(255, 255, 255, 0.09), 0 0 8px 0 rgba(255, 255, 255, 0.32);
@@ -23,7 +25,7 @@
   --animate-marquee-reverse: marquee-reverse 20s linear infinite;
   --breakpoint-xs: 375px;
   --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
+  --breakpoint-md: 744px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1366px;
@@ -56,4 +58,142 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* width */
+.agentur-sec ::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* track (background) */
+.agentur-sec ::-webkit-scrollbar-track {
+  background: #202020;
+  /* your var(--Site-Black_800) */
+  border-radius: 4px;
+}
+
+/* thumb (scroll handle) */
+.agentur-sec ::-webkit-scrollbar-thumb {
+  background: #555;
+  /* change as needed */
+  border-radius: 4px;
+}
+
+/* hover effect */
+.agentur-sec ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.text-gradient2 {
+  background: linear-gradient(176deg, rgba(253, 253, 253, 0.12) 3.15%, rgba(253, 253, 253, 0.00) 80.62%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(270deg, #89520E 0%, #EF8F19 54%, #89520E 100%);
+}
+
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #202020;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.card-ga-logo img,
+.card-semrush-logo img,
+.card-ahrefs-logo img,
+.card-sistrix-logo img {
+  transition: all 0.5s ease-in-out;
+}
+
+.card-ga-logo:hover img {
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.card-semrush-logo:hover img,
+.card-ahrefs-logo:hover img {
+  transform: scale(1.45);
+  transition: all 0.5s ease-in-out;
+}
+
+.card-sistrix-logo img {
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-sistrix-logo:hover img {
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  width: 309px;
+  height: 84px;
+}
+
+.testim-box:has(.learn-more:hover) {
+  background-image: none !important;
+  background-color: #fff !important;
+}
+
+.testim-box:has(.learn-more:hover) p,
+.testim-box:has(.learn-more:hover) h3 {
+  color: #060606 !important;
+}
+
+.testim-box:has(.learn-more:hover) ul li span {
+  color: #060606 !important;
+}
+
+.testim-box:has(.learn-more:hover) ul li span img {
+  filter: brightness(0);
+}
+
+.learn-more:hover {
+  background-color: #EF8F19 !important;
+}
+
+.testim-box:has(.learn-more:hover) .hid-box {
+  display: block;
+}
+
+.testim-box:has(.learn-more:hover) .block-box {
+  display: none;
+}
+
+@media(max-width: 767px) {
+  .card-sistrix-logo:hover img {
+    width: 278px;
+    height: 84px;
+  }
+}
+
+@media(max-width: 575px) {
+  .card-sistrix-logo:hover img {
+    width: 180px;
+    height: 50px;
+  }
+
+  .seo-btn {
+    font-size: 16px;
+    padding: 0 0 !important;
+  }
+}
+
+@media only screen and (min-width: 384px) and (max-width: 575px) {
+  header {
+    top: 60px;
+  }
 }

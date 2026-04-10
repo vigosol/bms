@@ -13,31 +13,31 @@ const BENEFITS: Benefit[] = [
     title: "Mehr Kundenanfragen",
     description:
       "Eine erhöhte Sichtbarkeit sorgt für mehr qualifizierte Leads und potenzielle Neukunden.",
-    image: "images/advantage-img1.jpg",
+    image: "images/advantage-img1.webp",
   },
   {
     title: "Umsatzwachstum",
     description:
       "Durch gezielte Online-Marketing-Maßnahmen steigern wir deinen Umsatz nachhaltig und messbar.",
-    image: "images/advantage-img2.jpg",
+    image: "images/advantage-img2.webp",
   },
   {
     title: "Wettbewerbsvorteil",
     description:
       "Hebe dich von der Konkurrenz ab und positioniere dich als erste Wahl in deiner Branche.",
-    image: "images/advantage-img3.jpg",
+    image: "images/advantage-img3.webp",
   },
   {
     title: "Attraktivität als Arbeitgeber",
     description:
       "Eine starke Online-Präsenz hilft dir, qualifizierte Fachkräfte auf dich aufmerksam zu machen.",
-    image: "images/advantage-img4.jpg",
+    image: "images/advantage-img4.webp",
   },
   {
     title: "Nachhaltiger Erfolg",
     description:
       "Langfristige Strategien sorgen für kontinuierliches Wachstum – weit über kurzfristige Kampagnen hinaus.",
-    image: "images/advantage-img5.jpg",
+    image: "images/advantage-img5.webp",
   },
 ];
 
@@ -61,13 +61,23 @@ export default function AdvantageCards({
               active === i ? "bg-white/10" : "bg-transparent hover:bg-white/5"
             }`}
           >
-            <p
-              className={`xl:text-2xl text-sm font-semibold leading-4.75 xl:leading-8.25 transition-colors duration-300 ${
-                active === i ? "text-orange-1100" : "text-white/50"
-              }`}
-            >
-              {benefit.title}
-            </p>
+            <div className="flex items-center justify-between">
+              <p
+                className={`xl:text-2xl text-sm xl:font-semibold md:tracking-normal -tracking-[0.14px] md:font-bold font-semibold leading-4.25 md:leading-4.75 xl:leading-8.25 transition-colors duration-300 ${
+                  active === i ? "text-orange-1100" : "text-white/50"
+                }`}
+              >
+                {benefit.title}
+              </p>
+
+              <img
+                src="images/drop-arw.svg"
+                alt="arrow"
+                className={`w-5 h-5 transition-transform duration-300 ${
+                  active === i ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </div>
 
             <div
               className="grid transition-all duration-500 ease-in-out"
@@ -87,16 +97,17 @@ export default function AdvantageCards({
         ))}
       </div>
 
-      <div className="md:w-1/2 w-full relative rounded-2xl overflow-hidden shadow-4xl">
+      <div className="md:w-1/2 w-full relative rounded-2xl md:mt-0 mt-4 overflow-hidden shadow-4xl aspect-4/3">
         {BENEFITS.map((benefit, i) => (
-          <img
-            key={i}
-            src={benefit.image}
-            alt={benefit.title}
-            className={`absolute inset-0 w-full h-full object-cover shadow-4xl transition-opacity duration-500 ${
-              active === i ? "opacity-100" : "opacity-0"
-            }`}
-          />
+          <div key={i} className="absolute inset-0 w-full h-full">
+            <img
+              src={benefit.image}
+              alt={benefit.title}
+              className={`w-full h-full object-cover transition-opacity duration-500 ${
+                active === i ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          </div>
         ))}
       </div>
     </div>

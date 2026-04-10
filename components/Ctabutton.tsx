@@ -36,7 +36,7 @@ export default function CtaButton({
   return (
     <Link
       href={href}
-      className={`border border-solid group border-orange-1100 rounded h-12 pl-4 pr-3 inline-flex items-center gap-4 text-sm md:text-base font-normal leading-4.25 md:leading-5.5 transition-all
+      className={`border sm:w-auto w-full border-solid group border-orange-1100 rounded h-12 pl-4 pr-3 inline-flex justify-center items-center gap-4 text-sm md:text-base font-normal leading-4.25 md:leading-5.5 transition-all
         ${
           isSolid
             ? "bg-orange-1100 shadow-3xl text-white-1100 hover:bg-white-1100 hover:border-white-1100 hover:text-black-1100"

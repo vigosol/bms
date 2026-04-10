@@ -66,15 +66,26 @@ function FaqRow({
         <span className="flex-1 font-semibold text-base leading-4.75 md:leading-8.25 md:text-2xl text-white">
           {item.question}
         </span>
+        <span className="relative size-8 flex items-center justify-center">
+          <img
+            src="images/plus.svg"
+            alt="plus icon"
+            className={`absolute transition-all duration-300 ease-in-out ${
+              open
+                ? "rotate-90 opacity-0 scale-75"
+                : "rotate-0 opacity-100 scale-100"
+            }`}
+          />
 
-        <span
-          className="size-8 flex items-center justify-center text-white transition-transform duration-300"
-          style={{ transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
-        >
-          <img src="images/plus.svg" alt="" />
+          <img
+            src="images/minus.svg"
+            alt="minus icon"
+            className={`absolute transition-all duration-300 ease-in-out ${
+              open ? "opacity-100 scale-100" : "opacity-0 scale-75"
+            }`}
+          />
         </span>
       </button>
-
       <div
         style={{
           maxHeight: height,
@@ -86,7 +97,7 @@ function FaqRow({
           ref={contentRef}
           className="px-6 pt-3 pb-5 bg-black-1200 rounded-b-2xl"
         >
-          <p className="text-base font-normal leading-5.5 text-white/80">
+          <p className="text-base font-normal leading-5.5 text-white/80 line-clamp-3">
             {item.answer}
           </p>
         </div>

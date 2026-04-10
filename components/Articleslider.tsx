@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Swiper from "swiper";
 import { Grid } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/grid";
+import { ArticleCard } from "./ArticleCard";
 
 const imgPost1 = "images/post-img1.jpg";
 const imgPost2 = "images/post-img2.jpg";
@@ -33,7 +34,7 @@ const ARTICLES: Article[] = [
     id: 2,
     image: imgPost2,
     category: "Social Media",
-    title: "Die besten Conversion-Hacks f\u00fcr Google Ads",
+    title: "Die besten Conversion-Hacks für Google Ads",
     excerpt:
       "Entdecke einfache Techniken, um deine Google Ads-Kampagnen effizienter...",
   },
@@ -62,36 +63,6 @@ const ARTICLES: Article[] = [
   },
 ];
 
-function ArticleCard({ article }: { article: Article }) {
-  return (
-    <div className="flex flex-col gap-4 items-start overflow-hidden pb-6 md:pb-8 rounded-2xl h-full">
-      <div className="h-60 overflow-hidden relative rounded-2xl shrink-0 w-full">
-        <div className="absolute inset-0 border border-white/50 rounded-2xl z-10 pointer-events-none" />
-        <img
-          src={article.image}
-          alt={article.title}
-          className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-        />
-      </div>
-
-      <div className="rounded-lg bg-white/16 px-4 py-1 inline-flex items-center justify-center shadow-5xl">
-        <span className="font-normal flex text-xs leading-xs text-grey-1100">
-          {article.category}
-        </span>
-      </div>
-
-      <div className="flex flex-col gap-4 w-full">
-        <p className="font-bold text-base leading-4.75 xl:leading-5.5 text-white-1100">
-          {article.title}
-        </p>
-        <p className="font-normal text-[14px] leading-4.25 text-grey-1100">
-          {article.excerpt}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function ArticlesSection({
   className = "",
 }: {
@@ -105,40 +76,65 @@ export default function ArticlesSection({
     if (!swiperRef.current) return;
 
     const swiper = new Swiper(swiperRef.current, {
+      modules: [Grid],
+
       direction: "horizontal",
-      slidesPerView: 3.4,
-      spaceBetween: 32,
+      slidesPerView: 1,
+      spaceBetween: 24,
+
+      grid: {
+        rows: 1,
+        fill: "row",
+      },
+
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32,
+          grid: {
+            rows: 1,
+          },
+        },
+        1280: {
+          slidesPerView: 3.4,
+          spaceBetween: 32,
+          grid: {
+            rows: 1,
+          },
+        },
+      },
+
       on: {
         slideChange(s) {
           setActiveIndex(s.realIndex);
         },
       },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 32,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-        },
-        1200: {
-          slidesPerView: 3.4,
-          spaceBetween: 32,
-        },
-      },
     });
 
     swiperInstanceRef.current = swiper;
-    return () => swiper.destroy(true, true);
+
+    return () => {
+      swiper.destroy(true, true);
+    };
   }, []);
 
   return (
     <div className={`relative ${className}`}>
-      <div ref={swiperRef} className="swiper overflow-visible!">
+      <div
+        ref={swiperRef}
+        className="swiper xl:overflow-visible! xl:pt-22 md:pt-14 pt-8"
+      >
         <div className="swiper-wrapper items-stretch">
           {ARTICLES.map((article) => (
-            <div key={article.id} className="swiper-slide h-auto!">
+            <div key={article.id} className="swiper-slide h-auto">
               <ArticleCard article={article} />
             </div>
           ))}

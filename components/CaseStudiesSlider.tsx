@@ -7,11 +7,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const SLIDE_IMAGES = [
-  "images/case-study-img1.png",
-  "images/case-study-img2.png",
-  "images/case-study-img3.png",
-  "images/case-study-img4.png",
-  "images/case-study-img5.png",
+  "images/case-study-img1.webp",
+  "images/case-study-img2.webp",
+  "images/case-study-img3.webp",
+  "images/case-study-img4.webp",
+  "images/case-study-img5.webp",
 ];
 
 interface CaseStudy {
@@ -85,12 +85,12 @@ const CASE_STUDIES: CaseStudy[] = [
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
-    <div className="flex gap-5 xl:items-end items-start h-full pr-4 md:flex-row flex-col">
-      <div className="relative rounded-xl overflow-hidden md:w-auto w-full  shadow-4xl px-5 py-10 xl:py-7 bg-[url(/images/case-studybg.png)] bg-no-repeat bg-cover">
+    <div className="flex gap-5 md:items-end items-start h-full md:pr-4 md:px-0 px-4 md:flex-row flex-col">
+      <div className="relative rounded-xl overflow-hidden md:w-94.75 w-full h-65 md:h-81.25  flex items-center justify-center  shadow-4xl px-5 py-5 md:py-10 xl:py-7 bg-[url(/images/case-studybg.png)] bg-no-repeat bg-cover">
         <img
           src={study.image}
           alt={study.title}
-          className="w-full xl:h-full object-cover h-60.25 "
+          className="w-full xl:h-62.25 object-cover h-54.5 md:h-60.25 "
         />
       </div>
 
@@ -167,7 +167,7 @@ export default function CaseStudiesSlider({
   return (
     <div className={`relative ${className}`}>
       <div ref={swiperRef} className="swiper caseStudySwiper overflow-visible!">
-        <div className="swiper-wrapper p-5">
+        <div className="swiper-wrapper md:p-5">
           {CASE_STUDIES.map((study, i) => (
             <div key={i} className="swiper-slide">
               <CaseStudyCard study={study} />

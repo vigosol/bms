@@ -9,13 +9,13 @@ import Link from "next/link";
 
 const imgArrow = "images/arw-circle.svg";
 
-const imgSide1 = "images/slide-img1.jpg";
-const imgSide2 = "images/slide-img2.jpg";
-const imgSide3 = "images/slide-img3.jpg";
-const imgSide4 = "images/slide-img4.jpg";
-const imgSide5 = "images/slide-img5.jpg";
-const imgSide6 = "images/slide-img6.jpg";
-const imgSide7 = "images/slide-img7.jpg";
+const imgSide1 = "images/slide-img1.webp";
+const imgSide2 = "images/slide-img2.webp";
+const imgSide3 = "images/slide-img3.webp";
+const imgSide4 = "images/slide-img4.webp";
+const imgSide5 = "images/slide-img5.webp";
+const imgSide6 = "images/slide-img6.webp";
+const imgSide7 = "images/slide-img7.webp";
 
 interface ServiceCard {
   title: string;
@@ -208,10 +208,10 @@ function ServiceInfoCard({ card }: { card: ServiceCard }) {
   return (
     <div className="relative flex items-center justify-center bg-[url(/images/card-bg.png)] bg-no-repeat bg-cover py-6 px-4 md:p-6 xl:py-9.75 xl:px-8 rounded-2xl shadow-4xl">
       <div className="relative flex flex-col gap-2 w-full">
-        <p className="font-['Sora',sans-serif] font-semibold text-[14px] leading-[1.4] text-orange-1100">
+        <p className="font-semibold xl:text-base xl:leading-[140%] xl:font-bold text-sm leading-4.75 text-orange-1100 line-clamp-2">
           {card.title}
         </p>
-        <p className="font-['Sora',sans-serif] font-light text-[10px] leading-[1.4] text-white-1100">
+        <p className="font-light xl:text-sm xl:font-normal xl:leading-[124%] text-[10px] leading-sm text-white-1100 line-clamp-4">
           {card.description}
         </p>
       </div>
@@ -221,18 +221,18 @@ function ServiceInfoCard({ card }: { card: ServiceCard }) {
 
 function ServiceSlide({ service }: { service: Service }) {
   return (
-    <div className="flex gap-8 w-full md:flex-row flex-col h-full px-5 2xl:pb-8 pb-4 md:pb-11">
-      <div className="rounded-2xl w-full md:w-[42%]">
+    <div className="flex gap-8 w-full md:flex-row flex-col h-full md:px-5 2xl:pb-8 pb-4 md:pb-11">
+      <div className="rounded-2xl w-full md:px-0 px-4 md:w-1/2 xl:w-[42%]">
         <img
-          className="h-full object-cover md:w-auto w-full object-center rounded-2xl"
+          className="md:h-full object-cover md:w-auto w-full object-center shadow-4xl rounded-2xl  h-41.5"
           src={service.sideImage}
           alt={service.title}
         />
       </div>
-      <div className="flex flex-col gap-6 w-full md:w-[58%]">
+      <div className="flex flex-col gap-6 md:px-0 px-4 w-full md:w-1/2 xl:w-[58%]">
         <div className="flex gap-6 items-end w-full">
           <div className="flex flex-col gap-3 flex-1 text-white-1100">
-            <p className="font-semibold text-2xl leading-8.25 text-white-1100 ">
+            <p className="font-semibold md:text-2xl text-lg leading-5.5 md:leading-8.25 text-white-1100 ">
               {service.title}
             </p>
             <p className="font-normal text-sm leading-4.25 text-white-1100">
@@ -251,7 +251,7 @@ function ServiceSlide({ service }: { service: Service }) {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-3 w-full">
+        <div className="flex flex-col gap-2 md:gap-3 w-full">
           {service.cards.map((card, i) => (
             <ServiceInfoCard key={i} card={card} />
           ))}
@@ -333,7 +333,7 @@ export default function ServicesSlider({
         />
       </button>
 
-      <div className="absolute bottom-3 lg:bottom-7 left-1/2 2xl:hidden -translate-x-1/2 flex items-center gap-7.5">
+      <div className="absolute -bottom-2 xs:-bottom-1 lg:bottom-7 left-1/2 2xl:hidden -translate-x-1/2 flex items-center gap-4 xs:gap-5 md:gap-7.5">
         {SERVICES.map((_, i) => (
           <button
             key={i}

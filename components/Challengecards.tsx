@@ -22,7 +22,7 @@ function ChallengeCard({
         <img
           src={icon}
           alt=""
-          className="md:w-20 md:h-20 w-12.75 h-12.75 object-contain -scale-y-100"
+          className="md:w-20 md:h-20 w-12.75 h-12.75 object-contain"
         />
       </div>
 
@@ -77,7 +77,7 @@ export default function ChallengeCards({
 }) {
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 ${className}`}
+      className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6  xl:gap-8 ${className}`}
     >
       {CARDS.map((card, index) => (
         <div

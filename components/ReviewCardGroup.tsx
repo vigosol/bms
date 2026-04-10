@@ -5,8 +5,6 @@ import Link from "next/link";
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const imgStar = "images/img-star.svg";
 const imgArrowPrev = "images/arw-prev.svg";
@@ -142,7 +140,7 @@ export function ReviewCardGroup({ className = "" }: { className?: string }) {
         },
       },
       breakpoints: {
-        0: { slidesPerView: 1.4, spaceBetween: 16 },
+        0: { slidesPerView: 1.1, spaceBetween: 16 },
         768: { slidesPerView: 2, spaceBetween: 24 },
         1200: { slidesPerView: 3, spaceBetween: 32 },
       },
@@ -185,7 +183,7 @@ export function ReviewCardGroup({ className = "" }: { className?: string }) {
             key={i}
             onClick={() => swiperInstanceRef.current?.slideToLoop(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className="h-0.5 w-16 cursor-pointer transition-colors duration-300"
+            className="h-0.5  w-8 md:w-16 cursor-pointer transition-colors duration-300"
             style={{
               backgroundColor: i === activeIndex ? "#9C5701" : "#DCDCDC",
             }}
